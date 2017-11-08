@@ -1,16 +1,25 @@
-version: '2'
+version: '3'
+networks:
+  pos-aula:
+    driver: bridge
 services:
- postgres:
-  build: ./postgres
-  image: ricardojob/banco
-  container_name: banco
-  ports: 
-    - "5433:5432"
- web:
-  build: .
-  image: ricardojob/app
-  container_name: app
-  ports: 
-    - "8082:8080" 
-  links: 
-    - "postgres:host-banco"   
+  postgres:
+    build: ./postgres
+    image: ricardojob/banco
+    container_name: banco
+    ports: 
+      - "5433:5432"
+    volumes:
+      - ./postgres/data:/var/lib/postgresql/data
+    networks: 
+      - pos-aula
+  web:
+    build: .
+    image: ricardojob/app
+    container_name: app
+    ports: 
+      - "8082:8080" 
+    links: 
+      - "postgres:host-banco"
+    networks: 
+      - pos-aula 
