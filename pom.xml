@@ -3,11 +3,11 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>br.edu.ifpb</groupId>
-    <artifactId>pos-docker</artifactId>
+    <artifactId>pos-docker-volume</artifactId>
     <version>1.0-SNAPSHOT</version>
     <packaging>war</packaging>
 
-    <name>pos-docker</name>
+    <name>pos-docker-volume</name>
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <maven.compiler.source>1.8</maven.compiler.source>
