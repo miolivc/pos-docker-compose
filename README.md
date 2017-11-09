@@ -6,7 +6,7 @@
 
 **3. Como funciona a configuração do volume:** nas informações referentes ao serviço que você deseja 
 criar um volume para ele, coloque a propriedade `volumes` e logo em seguida descreva o volume a ser criado
-no padrão `pastaMaquinaLocal:pastaMaquinaRemota`.  
+no padrão `pastaMaquinaLocal:pastaHostRemoto`.  
 
 **4. Como funciona a configuração do network:** para definir uma rede você precisa definir a propriedade 
 `networks` que conterá a sua network e as configurações para utilizá-la. O docker usa como padrão o `driver`
