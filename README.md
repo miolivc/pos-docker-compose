@@ -9,9 +9,8 @@ criar um volume para ele, coloque a propriedade `volumes` e logo em seguida desc
 no padrão `pastaMaquinaLocal:pastaHostRemoto`.  
 
 **4. Como funciona a configuração do network:** para definir uma rede você precisa definir a propriedade 
-`networks` que conterá a sua network e as configurações para utilizá-la. O docker usa como padrão o `driver`
-chamado bridge que tem como característica ser single-host. Para que o container use a network você deverá colocar
-na definição do serviço a propriedade `networks`, onde seu valor será o nome da network que deseja utilizar.
+`networks` que conterá a propriedade `external` que referencia uma rede já criada e dentro do external deve ser configurado o parametro `name` com o nome da rede à ser utilizada.  
+Para criar a rede execute o comando: `docker network create <nome-rede>`, no caso do exemplo `pos-aula `.
 
 **Exemplo de uso:**
 
@@ -19,7 +18,8 @@ na definição do serviço a propriedade `networks`, onde seu valor será o nome
 version: '2'
 networks:
   pos-aula:
-    driver: bridge
+    external:
+      name: pos-aula
 services:
   postgres:
     build: ./postgres

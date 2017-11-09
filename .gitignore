@@ -17,3 +17,5 @@ nb-configuration.xml
 **/target
 .idea/**
 **/*.iml
+
+./postgres/data

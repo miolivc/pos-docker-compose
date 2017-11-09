@@ -1,7 +1,8 @@
 version: '2'
 networks:
   pos-aula:
-    driver: bridge
+    external:
+      name: pos-aula
 services:
   postgres:
     build: ./postgres
